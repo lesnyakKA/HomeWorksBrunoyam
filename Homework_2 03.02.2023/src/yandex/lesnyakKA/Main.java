@@ -13,7 +13,7 @@ public class Main {
         int[] arrayInt = {1, 2, 3, 4, 5, 6, 7};
         System.out.println(Arrays.toString(ArrayUtil.reduceEvenElement(arrayInt)));
 
-        int[] array = {1, 2, 3, 4, 5, 6, 7, 8};
+        int[] array = {1, 2, 3, 4, 5, 6, 7, 8, 56};
 
         System.out.println("ArrayUtil.doSpecifiedOperations(int[] array, ArithmeticOperations.ADDITION");
         System.out.println(ArrayUtil.doSpecifiedOperations(array, ArithmeticOperations.ADDITION));

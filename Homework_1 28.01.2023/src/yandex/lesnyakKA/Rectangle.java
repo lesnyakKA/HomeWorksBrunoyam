@@ -1,28 +1,20 @@
 package yandex.lesnyakKA;
 
 public class Rectangle {
-    private int longRectangle;
+    private int length;
     private int width;
 
-    public Rectangle(int longRectangle, int width) {
-        this.longRectangle = longRectangle;
+    public Rectangle(int length, int width) {
+        this.length = length;
         this.width = width;
     }
 
-    @Override
-    public String toString() {
-        return "Rectangle{" +
-                "longRectangle=" + longRectangle +
-                ", width=" + width +
-                '}';
+    public int getLength() {
+        return length;
     }
 
-    public int getLongRectangle() {
-        return longRectangle;
-    }
-
-    public void setLongRectangle(int longRectangle) {
-        this.longRectangle = longRectangle;
+    public void setLength(int length) {
+        this.length = length;
     }
 
     public int getWidth() {
@@ -33,15 +25,19 @@ public class Rectangle {
         this.width = width;
     }
 
+    @Override
+    public String toString() {
+        return "Rectangle{" +
+                "longRectangle=" + length +
+                ", width=" + width +
+                '}';
+    }
+
     public int getPerimeterRectangle() {
-        int longRectangle = this.longRectangle;
-        int width = this.width;
-        return 2 * (longRectangle + width);
+        return 2 * (length + width);
     }
     public int getSquareRectangle() {
-        int longRectangle = this.longRectangle;
-        int width = this.width;
-        return longRectangle * width;
+        return length * width;
     }
 
 }

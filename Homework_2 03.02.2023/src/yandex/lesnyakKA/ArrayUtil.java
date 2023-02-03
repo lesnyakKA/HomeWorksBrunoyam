@@ -18,37 +18,33 @@ public class ArrayUtil {
 
     public static int[] reduceEvenElement(int[] array) {
         int[] result = new int[array.length / 2];
-        int count = 0;
         for (int i = 0; i < array.length; i++) {
-            if(i % 2 == 0) {
-                continue;
+            if(i % 2 != 0) {
+                result[i/2] = array[i];
             }
-            result[count] = array[i];
-            count++;
         }
         return result;
     }
 
-    public static int doSpecifiedOperations(int[] array, ArithmeticOperations operation) {
+    public static double doSpecifiedOperations(int[] array, ArithmeticOperations operation) {
         int result = 0;
 
-        if (operation == ArithmeticOperations.ADDITION) {
-            result = Arrays.stream(array)
-                    .sum();
-        }
+        switch (operation) {
+            case ADDITION:
+                result = Arrays.stream(array)
+                        .sum();
+                break;
 
-        else if (operation == ArithmeticOperations.MULTIPLICATION) {
-            result = 1;
-            for(int element: array) {
-                result *= element;
-            }
-        }
-
-        else if (operation == ArithmeticOperations.AVERAGE_VALUE) {
-            for(int element: array) {
-                result += element ;
-            }
-            result = result / array.length;
+            case MULTIPLICATION:
+                result = 1;
+                for(int element: array) {
+                    result *= element;
+                }
+                break;
+            case AVERAGE_VALUE:
+                result = (int) Arrays.stream(array)
+                        .average().orElse(Double.NaN);
+                break;
         }
         return result;
     }
